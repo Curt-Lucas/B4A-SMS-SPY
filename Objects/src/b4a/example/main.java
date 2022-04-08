@@ -62,7 +62,7 @@ public class main extends Activity implements B4AActivity{
 		setContentView(layout);
 		afterFirstLayout = false;
         WaitForLayout wl = new WaitForLayout();
-        if (anywheresoftware.b4a.objects.ServiceHelper.StarterHelper.startFromActivity(this, processBA, wl, false))
+        if (anywheresoftware.b4a.objects.ServiceHelper.StarterHelper.startFromActivity(this, processBA, wl, true))
 		    BA.handler.postDelayed(wl, 5);
 
 	}
@@ -374,22 +374,22 @@ public static void killProgram() {
             if (__a != null)
 				__a.finish();}
 
-BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, service1.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
-public b4a.example.starter _starter = null;
+public b4a.example.service1 _service1 = null;
 public static String  _activity_create(boolean _firsttime) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
 RDebugUtils.currentLine=131072;
  //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"Layout\")";
-mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
 RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131074;BA.debugLine="Activity.LoadLayout(\"Layout\")";
+mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{

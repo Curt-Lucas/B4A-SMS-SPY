@@ -11,13 +11,13 @@ import anywheresoftware.b4a.pc.Debug;
 import anywheresoftware.b4a.pc.B4XTypes.B4XClass;
 import anywheresoftware.b4a.pc.B4XTypes.DeviceClass;
 
-public class starter implements IRemote{
-	public static starter mostCurrent;
+public class service1 implements IRemote{
+	public static service1 mostCurrent;
 	public static RemoteObject processBA;
     public static boolean processGlobalsRun;
     public static RemoteObject myClass;
     public static RemoteObject remoteMe;
-	public starter() {
+	public service1() {
 		mostCurrent = this;
 	}
     public RemoteObject getRemoteMe() {
@@ -28,7 +28,7 @@ public boolean isSingleton() {
 		return true;
 	}
     static {
-        anywheresoftware.b4a.pc.RapidSub.moduleToObject.put(new B4XClass("starter"), "b4a.example.starter");
+        anywheresoftware.b4a.pc.RapidSub.moduleToObject.put(new B4XClass("service1"), "b4a.example.service1");
 	}
      public static RemoteObject getObject() {
 		return myClass;
@@ -39,20 +39,15 @@ public boolean isSingleton() {
 	public PCBA create(Object[] args) throws ClassNotFoundException{
 		processBA = (RemoteObject) args[1];
         _service = (RemoteObject) args[2];
-        remoteMe = RemoteObject.declareNull("b4a.example.starter");
+        remoteMe = RemoteObject.declareNull("b4a.example.service1");
         anywheresoftware.b4a.keywords.Common.Density = (Float)args[3];
-		pcBA = new PCBA(this, starter.class);
+		pcBA = new PCBA(this, service1.class);
         main_subs_0.initializeProcessGlobals();
 		return pcBA;
-	}public static RemoteObject runMethod(boolean notUsed, String method, Object... args) throws Exception{
-		return (RemoteObject) mostCurrent.pcBA.raiseEvent(method.substring(1), args);
-	}
-    public static void runVoidMethod(String method, Object... args) throws Exception{
-		runMethod(false, method, args);
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static b4a.example.main _main = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class),"Service",starter.mostCurrent._service};
+		return new Object[] {"Main",Debug.moduleToString(b4a.example.main.class),"Service",service1.mostCurrent._service};
 }
 }

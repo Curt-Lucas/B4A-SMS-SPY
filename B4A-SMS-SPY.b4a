@@ -3,11 +3,12 @@ File1=Layout.bal
 FileGroup1=Default Group
 Group=Default Group
 Library1=core
-Library2=xui
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
-Module1=Starter
+Library2=reflection
+Library3=xui
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="30"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~AddPermission(android.permission.RECEIVE_SMS)~\n~AddReceiverText(Service1,~\n~<intent-filter>~\n~    <action android:name="android.provider.Telephony.SMS_RECEIVED" />~\n~</intent-filter>)
+Module1=service1
 NumberOfFiles=1
-NumberOfLibraries=2
+NumberOfLibraries=3
 NumberOfModules=1
 Version=11.5
 @EndOfDesignText@
@@ -36,6 +37,7 @@ Sub Globals
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
+	
 	Activity.LoadLayout("Layout")
 End Sub
 
